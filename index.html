@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./assets/css/diamonds.css">
+    <title>Responsive Diamond Tile Grid</title>
+    <style>
+      body{
+        margin: 0;
+        padding: 0;
+        background: #000;
+      }
+
+      .diamond-grid{
+        width: 70%;
+        margin: 150px auto 0;
+      }
+
+      .item{
+        width: 220px;
+        height: 220px;
+        background: url('./assets/img/city.jpeg') no-repeat 0 0 fixed;
+        /* background-attachment: fixed;  The other way is to add this line and remove  no-repeat 0 0 fixed  from background */
+		    background-size: cover;
+        opacity: 0.5;
+        transition: .5s;
+      }
+
+      .item:hover{
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="diamond-grid">
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="./assets/js/jquery.diamonds.js"></script>
+    <script>
+      $(".diamond-grid").diamonds({
+        size : 220, // Size of diamonds in pixels. Both width and height.
+        gap : 5, // Pixels between each square.
+        hideIncompleteRow : false, // Hide last row if there are not enough items to fill it completely.
+        autoRedraw : true, // Auto redraw diamonds when it detects resizing.
+        itemSelector : ".item" // the css selector to use to select diamonds-items.
+      });
+    </script>
+  </body>
+</html>
